@@ -6,6 +6,7 @@ import FooterComponent from "@/components/footer/FooterComponent";
 import MetadataComponent from "@/components/metadata/MetadataComponent";
 import SidebareComponent from "@/components/sidebare/SidebareComponent";
 import ReaderComponent from "@/components/readers/ReaderComponent";
+import SearchComponent from "@/components/search/SearchComponent";
 
 export default function RootLayout({ children }) {
   return (
@@ -25,6 +26,10 @@ export default function RootLayout({ children }) {
 
           {/* Header */}
           <HeaderComponent />
+
+          {/*Seach Component */}
+          <SearchComponent />
+
 
           {/* Reader */}
           <ReaderComponent />
