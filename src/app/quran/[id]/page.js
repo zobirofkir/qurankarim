@@ -19,16 +19,6 @@ const Page = () => {
                 {reciter_name}
             </h1>
 
-            <div className="md:flex justify-center mb-6 hidden">
-                <Image
-                    src={video_thumb_url}
-                    alt={`غلاف فيديو ${reciter_name}`}
-                    width={300}
-                    height={300}
-                    className="rounded-lg shadow-md"
-                />
-            </div>
-
             <div className="video-container flex justify-center">
                 <video
                     controls

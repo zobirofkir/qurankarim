@@ -19,6 +19,9 @@ export default function RootLayout({ children }) {
       </head>
 
       <body className="container mx-auto bg-gray-100">
+        
+      <Provider store={store}>
+
 
         {/* Main Wrapper for Header, Sidebar, and Content */}
         <div className="flex flex-col md:flex-row min-h-screen">
@@ -38,9 +41,7 @@ export default function RootLayout({ children }) {
 
             {/* Main Content */}
             <main className="flex-1 p-4 md:p-6 bg-gray-100 overflow-y-auto">
-              <Provider store={store}>
                 {children}
-              </Provider>
             </main>
 
             {/* Footer */}
@@ -48,6 +49,8 @@ export default function RootLayout({ children }) {
 
           </div>
         </div>
+
+        </Provider>
 
       </body>
 

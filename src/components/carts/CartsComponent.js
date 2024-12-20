@@ -19,7 +19,6 @@ const CartsComponent = () => {
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error}</p>;
 
-    // Calculate the data for the current page
     const totalPages = Math.ceil(quran.length / ITEMS_PER_PAGE);
     const currentData = quran.slice(
         (currentPage - 1) * ITEMS_PER_PAGE,

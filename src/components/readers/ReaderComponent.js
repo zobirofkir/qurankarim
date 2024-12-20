@@ -1,14 +1,35 @@
-import React from 'react'
+"use client";
+
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import GetQuranAction from '@/redux/actions/GetQuranAction';
+import Link from 'next/link';
 
 const ReaderComponent = () => {
-    const names = ['أحمد التويجري', 'محمد الشريف', 'سعيد بن عبد الله', 'يوسف الصادق', 'علي بن محمد', 'عبد الله الفاسي', 'إبراهيم الحسين', 'خالد العتيبي', 'ناصر الزهراني', 'حسن الشمري', 'فهد الجهني', 'سلمان بن فهد', 'تركي السبيعي', 'محمود الحربي', 'أحمد السلمي', 'عبد الرحمن القحطاني', 'علي الدوسري', 'محمد الهاجري', 'سامي بن عبد الله', 'رياض القحطاني'];
+    const dispatch = useDispatch();
+    const { quran, loading, error } = useSelector((state) => state.quran);
+
+    useEffect(() => {
+        dispatch(GetQuranAction());
+    }, [dispatch]);
 
   return (
     <div className='container bg-gray-100 md:px-0 px-10'>
         <div className='flex flex-row gap-4 my-2 overflow-x-auto px-2'>
-            {names.map((name, index) => (
+            {quran.map((name, index) => (
                 <div key={index} className='bg-gray-200 px-4 py-2 rounded-md mb-4 font-bold'>
-                    <h1 className='whitespace-nowrap text-center'>{name}</h1>
+                    <Link 
+                        href={{
+                            pathname: `/quran/${name.id}`,
+                            query: {
+                                reciter_name: name.reciter_name,
+                                video_thumb_url: name.video_thumb_url,
+                                video_url: name.video_url,
+                            },
+                        }}                    
+                    >
+                        <h1 className='whitespace-nowrap text-center'>{name.reciter_name}</h1>
+                    </Link>
                 </div>
             ))}
         </div>
