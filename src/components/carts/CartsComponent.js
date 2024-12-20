@@ -1,7 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
 
-
 const CartsComponent = () => {
   const cartItems = [
     { id: 1, name: "القارئ محمود علي", imageUrl: "https://via.placeholder.com/50?text=1" },
@@ -17,15 +16,20 @@ const CartsComponent = () => {
       {/* Wrapper for the carts */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {cartItems.map(item => (
-          <div key={item.id} className="bg-white p-4 rounded-lg shadow-lg flex items-center flex justify-between items-center ">
-            <Image
-              width={50}
-              height={50} 
-              src={item.imageUrl} 
-              alt={`Cart Image ${item.id}`} 
-              className="w-12 h-12 object-cover rounded-full mr-4"
-            />
-            <h3 className="text-lg font-semibold text-gray-800">{item.name}</h3>
+          <div key={item.id} className="bg-white p-4 rounded-lg shadow-lg flex items-center justify-between">
+            <div className="flex items-center">
+              <Image
+                width={50}
+                height={50} 
+                src={item.imageUrl} 
+                alt={`Cart Image ${item.id}`} 
+                className="w-12 h-12 object-cover rounded-full mr-4"
+              />
+              <h3 className="text-lg font-semibold text-gray-800 mr-4">{item.name}</h3>
+            </div>
+            <button className="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300">
+              لِقِرَاءَة
+            </button>
           </div>
         ))}
       </div>
