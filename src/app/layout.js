@@ -40,9 +40,7 @@ export default function RootLayout({ children }) {
             </main>
 
             {/* Footer */}
-            <footer>
-              <FooterComponent />
-            </footer>
+            <FooterComponent />
 
           </div>
         </div>
