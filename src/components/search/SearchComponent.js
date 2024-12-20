@@ -8,7 +8,7 @@ const SearchComponent = () => {
   };
 
   return (
-    <div className="flex justify-center items-center py-4">
+    <div className="flex justify-center items-center py-4 md:px-0 px-10">
       <div className="relative w-full max-w-md">
         <input
           type="text"

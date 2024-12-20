@@ -6,7 +6,7 @@ const SidebarComponent = () => {
   const toggleSidebar = () => setIsOpen(!isOpen);
 
   return (
-    <div className="relative bg-gray-100">
+    <div className="relative bg-gray-100 z-[900]">
 
       {/* Hamburger Button */}
       <button

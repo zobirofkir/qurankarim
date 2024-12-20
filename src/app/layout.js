@@ -34,9 +34,6 @@ export default function RootLayout({ children }) {
           {/* Reader */}
           <ReaderComponent />
 
-          {/* Sidebar */}
-          <SidebareComponent />
-
             {/* Main Content */}
             <main className="flex-1 p-4 md:p-6 bg-gray-100 overflow-y-auto">
               {children}
