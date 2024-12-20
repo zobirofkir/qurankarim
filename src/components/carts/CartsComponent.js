@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import GetQuranAction from "@/redux/actions/GetQuranAction";
 import PaginationComponent from "../paginations/PaginationComponent";
+import Link from "next/link";
 
 const ITEMS_PER_PAGE = 10;
 
@@ -38,9 +39,18 @@ const CartsComponent = () => {
             {/* Wrapper for the carts */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {currentData.map((item) => (
-                    <div
+                    <Link
                         key={item.id}
-                        className="bg-white p-4 rounded-lg shadow-lg flex items-center justify-between"
+                        href={{
+                            pathname: `/quran/${item.id}`,
+                            query: {
+                                reciter_name: item.reciter_name,
+                                video_thumb_url: item.video_thumb_url,
+                                video_url: item.video_url,
+                            },
+                        }}
+                        rel="noopener noreferrer"
+                        className="flex items-center"
                     >
                         <Image
                             width={50}
@@ -49,10 +59,10 @@ const CartsComponent = () => {
                             alt={`Video Thumbnail ${item.id}`}
                             className="w-12 h-12 object-cover rounded-full mr-4"
                         />
-                        <h3 className="text-lg font-semibold text-gray-800">
+                        <h3 className="text-lg font-semibold text-gray-800 mr-4">
                             {item.reciter_name}
                         </h3>
-                    </div>
+                    </Link>
                 ))}
             </div>
 
