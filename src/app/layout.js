@@ -5,6 +5,7 @@ import "./globals.css";
 import FooterComponent from "@/components/footer/FooterComponent";
 import MetadataComponent from "@/components/metadata/MetadataComponent";
 import SidebareComponent from "@/components/sidebare/SidebareComponent";
+import ReaderComponent from "@/components/readers/ReaderComponent";
 
 export default function RootLayout({ children }) {
   return (
@@ -14,7 +15,7 @@ export default function RootLayout({ children }) {
         <MetadataComponent />
       </head>
 
-      <body>
+      <body className="container mx-auto bg-gray-100">
 
         {/* Main Wrapper for Header, Sidebar, and Content */}
         <div className="flex flex-col md:flex-row min-h-screen">
@@ -24,6 +25,9 @@ export default function RootLayout({ children }) {
 
           {/* Header */}
           <HeaderComponent />
+
+          {/* Reader */}
+          <ReaderComponent />
 
           {/* Sidebar */}
           <SidebareComponent />
