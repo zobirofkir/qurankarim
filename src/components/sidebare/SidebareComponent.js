@@ -63,7 +63,7 @@ const SidebarComponent = () => {
           <ul className="space-y-2">
             <li className="text-gray-700 hover:text-gray-900 cursor-pointer flex items-center space-x-2">
               <svg
-                className="w-5 h-5"
+                className="w-5 h-5 ml-4"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 stroke="currentColor"
@@ -80,7 +80,7 @@ const SidebarComponent = () => {
             </li>
             <li className="text-gray-700 hover:text-gray-900 cursor-pointer flex items-center space-x-2">
               <svg
-                className="w-5 h-5"
+                className="w-5 h-5 ml-4"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 stroke="currentColor"
@@ -97,7 +97,7 @@ const SidebarComponent = () => {
             </li>
             <li className="text-gray-700 hover:text-gray-900 cursor-pointer flex items-center space-x-2">
               <svg
-                className="w-5 h-5"
+                className="w-5 h-5 ml-4"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 stroke="currentColor"
@@ -114,7 +114,7 @@ const SidebarComponent = () => {
             </li>
             <li className="text-gray-700 hover:text-gray-900 cursor-pointer flex items-center space-x-2">
               <svg
-                className="w-5 h-5"
+                className="w-5 h-5 ml-4"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 stroke="currentColor"
