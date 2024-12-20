@@ -1,12 +1,14 @@
 "use client";
 
 import HeaderComponent from "@/components/header/HeaderComponent";
+import { Provider } from "react-redux";
 import "./globals.css";
 import FooterComponent from "@/components/footer/FooterComponent";
 import MetadataComponent from "@/components/metadata/MetadataComponent";
 import SidebareComponent from "@/components/sidebare/SidebareComponent";
 import ReaderComponent from "@/components/readers/ReaderComponent";
 import SearchComponent from "@/components/search/SearchComponent";
+import store from "@/redux/store/store";
 
 export default function RootLayout({ children }) {
   return (
@@ -36,7 +38,9 @@ export default function RootLayout({ children }) {
 
             {/* Main Content */}
             <main className="flex-1 p-4 md:p-6 bg-gray-100 overflow-y-auto">
-              {children}
+              <Provider store={store}>
+                {children}
+              </Provider>
             </main>
 
             {/* Footer */}
