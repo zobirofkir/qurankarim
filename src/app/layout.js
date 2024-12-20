@@ -14,9 +14,7 @@ export default function RootLayout({ children }) {
 
       <body>
 
-        <header>
-          <HeaderComponent />
-        </header>
+        <HeaderComponent />
 
         {children}
 
