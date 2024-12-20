@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import logo from "@/images/logo.jpg";
+import logo from "@/images/logo.png";
 import SidebarComponent from "../sidebare/SidebareComponent";
 
 const HeaderComponent = () => {
