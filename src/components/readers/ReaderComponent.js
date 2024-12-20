@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react'
 
 const ReaderComponent = () => {
@@ -8,7 +9,9 @@ const ReaderComponent = () => {
         <div className='flex flex-row gap-4 my-2 overflow-x-auto px-2'>
             {names.map((name, index) => (
                 <div key={index} className='bg-gray-200 px-4 py-2 rounded-md mb-4 font-bold'>
-                    <h1 className='whitespace-nowrap text-center'>{name}</h1>
+                    <Link href="">
+                        <h1 className='whitespace-nowrap text-center'>{name}</h1>
+                    </Link>
                 </div>
             ))}
         </div>
