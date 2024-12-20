@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const FooterComponent = () => {
@@ -9,28 +10,28 @@ const FooterComponent = () => {
       <div>
         <ul className="list-none flex justify-center gap-6 m-0 p-0">
           <li>
-            <a 
-              href="/about" 
+            <Link
+              href="" 
               className="text-gray-600 hover:text-gray-800 transition-colors"
             >
               عن الموقع
-            </a>
+            </Link>
           </li>
           <li>
-            <a 
-              href="/contact" 
+            <Link
+              href="" 
               className="text-gray-600 hover:text-gray-800 transition-colors"
             >
               اتصل بنا
-            </a>
+            </Link>
           </li>
           <li>
-            <a 
-              href="/privacy" 
+            <Link
+              href="" 
               className="text-gray-600 hover:text-gray-800 transition-colors"
             >
               سياسة الخصوصية
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
