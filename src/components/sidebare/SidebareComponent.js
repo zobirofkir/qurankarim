@@ -129,6 +129,75 @@ const SidebarComponent = () => {
               </svg>
               <span>اتصل بنا</span>
             </li>
+            {/* Additional List Items */}
+            <li className="text-gray-700 hover:text-gray-900 cursor-pointer flex items-center space-x-2">
+              <svg
+                className="w-5 h-5 ml-4"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                strokeWidth="2"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M3 6h18M3 12h18M3 18h18"
+                />
+              </svg>
+              <span>الآيات</span>
+            </li>
+            <li className="text-gray-700 hover:text-gray-900 cursor-pointer flex items-center space-x-2">
+              <svg
+                className="w-5 h-5 ml-4"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                strokeWidth="2"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M5 3h14M5 12h14M5 21h14"
+                />
+              </svg>
+              <span>التفسير</span>
+            </li>
+            <li className="text-gray-700 hover:text-gray-900 cursor-pointer flex items-center space-x-2">
+              <svg
+                className="w-5 h-5 ml-4"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                strokeWidth="2"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 4v16m-8-8h16"
+                />
+              </svg>
+              <span>الحديث الشريف</span>
+            </li>
+            <li className="text-gray-700 hover:text-gray-900 cursor-pointer flex items-center space-x-2">
+              <svg
+                className="w-5 h-5 ml-4"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                strokeWidth="2"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 8l4 4-4 4m0-8l-4 4 4 4"
+                />
+              </svg>
+              <span>دليل المستخدم</span>
+            </li>
           </ul>
         </div>
       </div>
