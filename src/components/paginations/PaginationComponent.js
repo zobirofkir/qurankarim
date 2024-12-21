@@ -20,19 +20,20 @@ const PaginationComponent = ({ currentPage, totalPages, onPrev, onNext }) => {
                         viewBox="0 0 24 24"
                         strokeWidth={1.5}
                         stroke="currentColor"
-                        className="w-5 h-5 mr-2"
+                        className="w-5 h-5 ml-2"
                     >
                         <path
                             strokeLinecap="round"
                             strokeLinejoin="round"
-                            d="M15.75 19.5L8.25 12l7.5-7.5"
+                            d="M8.25 4.5L15.75 12l-7.5 7.5"
                         />
                     </svg>
-                    Previous
+
+                    السابق
                 </button>
 
                 <span className="text-gray-600 font-medium text-center">
-                    Page {currentPage} of {totalPages}
+                    الصفحة {currentPage} من {totalPages}
                 </span>
 
                 <button
@@ -44,23 +45,24 @@ const PaginationComponent = ({ currentPage, totalPages, onPrev, onNext }) => {
                             : "bg-white text-gray-700 hover:bg-gray-100 border-gray-300"
                     }`}
                 >
-                    Next
+                    التالي
+
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
                         strokeWidth={1.5}
                         stroke="currentColor"
-                        className="w-5 h-5 ml-2"
+                        className="w-5 h-5 mr-2"
                     >
                         <path
                             strokeLinecap="round"
                             strokeLinejoin="round"
-                            d="M8.25 4.5L15.75 12l-7.5 7.5"
+                            d="M15.75 19.5L8.25 12l7.5-7.5"
                         />
                     </svg>
-                </button>
 
+                </button>
             </div>
         </div>
     );
