@@ -18,6 +18,8 @@ const Page = () => {
   );
 
   const [currentPage, setCurrentPage] = useState(1); 
+  const [searchTerm, setSearchTerm] = useState(''); // State for the search term
+
   const totalPages = interpretationInfo?.soar?.length ? Math.ceil(interpretationInfo.soar.length / 5) : 1;
 
   useEffect(() => {
@@ -34,6 +36,10 @@ const Page = () => {
     setCurrentPage((prev) => Math.min(prev + 1, totalPages)); 
   };
 
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value); // Update the search term
+  };
+
   if (loading) {
     return <div className="flex justify-center items-center h-screen">Loading...</div>;
   }
@@ -44,12 +50,26 @@ const Page = () => {
 
   const startIndex = (currentPage - 1) * 5;
   const endIndex = startIndex + 10;
-  const paginatedSoar = interpretationInfo?.soar?.slice(startIndex, endIndex);
+  const filteredSoar = interpretationInfo?.soar?.filter((item) =>
+    item.name.toLowerCase().includes(searchTerm.toLowerCase()) // Filter by name
+  );
+  const paginatedSoar = filteredSoar?.slice(startIndex, endIndex);
 
   return (
     <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-lg p-8 mt-8">
       <h1 className="text-3xl font-semibold text-center text-gray-800 mb-6">{interpretationInfo.name}</h1>
       
+      {/* Search input */}
+      <div className="mb-6">
+        <input
+          type="text"
+          placeholder="Search by name..."
+          value={searchTerm}
+          onChange={handleSearchChange}
+          className="w-full p-2 border border-gray-300 rounded-md"
+        />
+      </div>
+
       {/* Display interpretation content */}
       <div className="space-y-6">
         {paginatedSoar?.length > 0 ? (
