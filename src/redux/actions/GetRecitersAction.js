@@ -15,7 +15,6 @@ const GetRecitersAction = () => async (dispatch) => {
     try {
         dispatch({ type: GetRecitersType.GET_RECITERS });
         const response = await GetRecitersService();
-        console.log(response.data.reciters);
         dispatch(getRecitersSuccess(response.data.reciters || []));
     } catch (error) {
         dispatch(getRecitersFail(error.message || "Error fetching reciters"));
