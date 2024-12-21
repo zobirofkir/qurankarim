@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React, { useState } from 'react';
 
 const SidebarComponent = () => {
@@ -76,25 +77,28 @@ const SidebarComponent = () => {
                   d="M3 10h18M3 14h18M3 6h18"
                 />
               </svg>
-              <span>الرئيسية</span>
+              <Link href="/">
+                <span>الرئيسية</span>
+              </Link>
             </li>
-            <li className="text-gray-700 hover:text-gray-900 cursor-pointer flex items-center space-x-2">
-              <svg
-                className="w-5 h-5 ml-4"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                strokeWidth="2"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-              <span>من نحن</span>
-            </li>
+
+              <li className="text-gray-700 hover:text-gray-900 cursor-pointer flex items-center space-x-2">
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-5 h-5 ml-4"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M10 2a8 8 0 100 16 8 8 0 000-16zM8 11h4a1 1 0 110 2H8a1 1 0 110-2zm0-4h4a1 1 0 110 2H8a1 1 0 110-2z" />
+                </svg>
+
+                <Link href="/interpretations">
+                  <span>تفسير القرآن</span>
+                </Link>
+              </li>
+
+            
             <li className="text-gray-700 hover:text-gray-900 cursor-pointer flex items-center space-x-2">
               <svg
                 className="w-5 h-5 ml-4"
@@ -112,6 +116,7 @@ const SidebarComponent = () => {
               </svg>
               <span>سورة</span>
             </li>
+
             <li className="text-gray-700 hover:text-gray-900 cursor-pointer flex items-center space-x-2">
               <svg
                 className="w-5 h-5 ml-4"
