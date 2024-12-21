@@ -5,9 +5,7 @@ import { Provider } from "react-redux";
 import "./globals.css";
 import FooterComponent from "@/components/footer/FooterComponent";
 import MetadataComponent from "@/components/metadata/MetadataComponent";
-import SidebareComponent from "@/components/sidebare/SidebareComponent";
 import ReaderComponent from "@/components/readers/ReaderComponent";
-import SearchComponent from "@/components/search/SearchComponent";
 import store from "@/redux/store/store";
 
 export default function RootLayout({ children }) {
@@ -31,10 +29,6 @@ export default function RootLayout({ children }) {
 
           {/* Header */}
           <HeaderComponent />
-
-          {/*Seach Component */}
-          <SearchComponent />
-
 
           {/* Reader */}
           <ReaderComponent />

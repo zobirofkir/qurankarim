@@ -11,6 +11,7 @@ const CartsComponent = () => {
     const dispatch = useDispatch();
     const { quran, loading, error } = useSelector((state) => state.quran);
     const [currentPage, setCurrentPage] = useState(1);
+    const [searchTerm, setSearchTerm] = useState(""); // State for search term
 
     useEffect(() => {
         dispatch(GetQuranAction());
@@ -19,8 +20,13 @@ const CartsComponent = () => {
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error}</p>;
 
-    const totalPages = Math.ceil(quran.length / ITEMS_PER_PAGE);
-    const currentData = quran.slice(
+    // Filter the quran list based on the search term
+    const filteredQuran = quran.filter((item) =>
+        item.reciter_name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    const totalPages = Math.ceil(filteredQuran.length / ITEMS_PER_PAGE);
+    const currentData = filteredQuran.slice(
         (currentPage - 1) * ITEMS_PER_PAGE,
         currentPage * ITEMS_PER_PAGE
     );
@@ -33,8 +39,25 @@ const CartsComponent = () => {
         if (currentPage < totalPages) setCurrentPage(currentPage + 1);
     };
 
+    // Handle search term change
+    const handleSearchChange = (e) => {
+        setSearchTerm(e.target.value);
+        setCurrentPage(1); // Reset to first page when search term changes
+    };
+
     return (
         <div className="container mx-auto p-4">
+            {/* Search input */}
+            <div className="mb-4">
+                <input
+                    type="text"
+                    placeholder="Search by reciter name..."
+                    value={searchTerm}
+                    onChange={handleSearchChange}
+                    className="w-full p-2 border border-gray-300 rounded-md"
+                />
+            </div>
+
             {/* Wrapper for the carts */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {currentData.map((item) => (
@@ -65,6 +88,7 @@ const CartsComponent = () => {
                 ))}
             </div>
 
+            {/* Pagination */}
             <PaginationComponent
                 currentPage={currentPage}
                 totalPages={totalPages}
