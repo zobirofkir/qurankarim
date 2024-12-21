@@ -5,13 +5,13 @@ import GetQuranAction from "@/redux/actions/GetQuranAction";
 import PaginationComponent from "../paginations/PaginationComponent";
 import Link from "next/link";
 
-const ITEMS_PER_PAGE = 10;
+const ITEMS_PER_PAGE = 30;
 
 const CartsComponent = () => {
     const dispatch = useDispatch();
     const { quran, loading, error } = useSelector((state) => state.quran);
     const [currentPage, setCurrentPage] = useState(1);
-    const [searchTerm, setSearchTerm] = useState(""); // State for search term
+    const [searchTerm, setSearchTerm] = useState(""); 
 
     useEffect(() => {
         dispatch(GetQuranAction());
