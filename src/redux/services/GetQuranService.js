@@ -1,7 +1,5 @@
 import axiosClient from "@/axios/axiosClient";
 
-const GetQuranService = async (endpoint) => {
-    return axiosClient.get(endpoint);
-};
+const GetQuranService = async () => await axiosClient.get("videos");
 
 export default GetQuranService;
