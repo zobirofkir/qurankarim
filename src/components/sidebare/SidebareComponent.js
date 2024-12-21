@@ -135,7 +135,11 @@ const SidebarComponent = () => {
                   d="M3 6h18M3 12h18M3 18h18"
                 />
               </svg>
-              <span>الآيات</span>
+              
+              <Link href="/reciters">
+                <span>القراء</span>
+              </Link>
+
             </li>
             <li className="text-gray-700 hover:text-gray-900 cursor-pointer flex items-center space-x-2">
               <svg
