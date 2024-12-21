@@ -114,26 +114,11 @@ const SidebarComponent = () => {
                   d="M12 5v14m7-7H5"
                 />
               </svg>
-              <span>سورة</span>
+             <Link href="/radio">
+              <span>الراديو</span>
+             </Link>
             </li>
-
-            <li className="text-gray-700 hover:text-gray-900 cursor-pointer flex items-center space-x-2">
-              <svg
-                className="w-5 h-5 ml-4"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                strokeWidth="2"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 8c-4.418 0-8 3.582-8 8s3.582 8 8 8 8-3.582 8-8-3.582-8-8-8z"
-                />
-              </svg>
-              <span>اتصل بنا</span>
-            </li>
+            
             {/* Additional List Items */}
             <li className="text-gray-700 hover:text-gray-900 cursor-pointer flex items-center space-x-2">
               <svg
