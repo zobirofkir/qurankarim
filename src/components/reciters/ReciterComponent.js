@@ -2,6 +2,7 @@ import GetRecitersAction from '@/redux/actions/GetRecitersAction';
 import Link from 'next/link';
 import React, { useEffect, useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import PaginationComponent from '../paginations/PaginationComponent';
 
 const ReciterComponent = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -9,6 +10,8 @@ const ReciterComponent = () => {
   const [mp3Files, setMp3Files] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedFile, setSelectedFile] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 5;
   const audioRef = useRef(null); 
   const dispatch = useDispatch();
   const { reciters, loading, error } = useSelector((state) => state.reciters);
@@ -66,6 +69,21 @@ const ReciterComponent = () => {
     reciter.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  const totalPages = Math.ceil(filteredReciters.length / itemsPerPage);
+
+  const currentPageData = filteredReciters.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
+
+  const handlePrevPage = () => {
+    if (currentPage > 1) setCurrentPage(currentPage - 1);
+  };
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) setCurrentPage(currentPage + 1);
+  };
+
   return (
     <div className="bg-white p-6 rounded-lg shadow-lg max-w-4xl mx-auto grid gap-6">
       <h2 className="text-2xl font-semibold text-gray-800 mb-4">معلومات القراء</h2>
@@ -79,7 +97,7 @@ const ReciterComponent = () => {
         className="mb-4 p-2 border border-gray-300 rounded-md w-full"
       />
 
-      {filteredReciters.map((reciter) => (
+      {currentPageData.map((reciter) => (
         <div key={reciter.id} className="bg-gray-50 p-6 rounded-lg shadow-sm grid gap-4">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-xl font-semibold text-gray-700">{reciter.name}</h3>
@@ -103,6 +121,14 @@ const ReciterComponent = () => {
           </div>
         </div>
       ))}
+
+      {/* Pagination */}
+      <PaginationComponent
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPrev={handlePrevPage}
+        onNext={handleNextPage}
+      />
 
       {/* Modal to display MP3 files */}
       {isModalOpen && (
