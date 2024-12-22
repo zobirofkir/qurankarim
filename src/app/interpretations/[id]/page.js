@@ -41,11 +41,11 @@ const Page = () => {
   };
 
   if (loading) {
-    return <div className="flex justify-center items-center h-screen">Loading...</div>;
+    return <div className="flex justify-center items-center h-screen">جار التحميل...</div>;
   }
 
   if (error) {
-    return <div className="text-center text-red-600">Error loading interpretation details</div>;
+    return <div className="text-center text-red-600">خطأ: {error}</div>;
   }
 
   const startIndex = (currentPage - 1) * 5;

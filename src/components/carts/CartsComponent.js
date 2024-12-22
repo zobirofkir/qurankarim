@@ -17,8 +17,8 @@ const CartsComponent = () => {
         dispatch(GetQuranAction());
     }, [dispatch]);
 
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error: {error}</p>;
+    if (loading) return <p>جار التحميل...</p>;
+    if (error) return <p>خطأ: {error}</p>;
 
     // Filter the quran list based on the search term
     const filteredQuran = quran.filter((item) =>
