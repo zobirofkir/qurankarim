@@ -63,7 +63,7 @@ const Page = () => {
       <div className="mb-6">
         <input
           type="text"
-          placeholder="Search by name..."
+          placeholder="ابحث عن طريق اسم القارئ..."
           value={searchTerm}
           onChange={handleSearchChange}
           className="w-full p-2 border border-gray-300 rounded-md"
